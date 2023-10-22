@@ -23,8 +23,9 @@ if (CUDA_FOUND)
     CUDA_NVCC_FLAGS
     ${CUDA_NVCC_FLAGS};
     -O3
-    -gencode arch=compute_30,code=sm_30
-    -gencode arch=compute_35,code=sm_35
+    # Comment in/out architectures not supported by your graphics card
+    # -gencode arch=compute_30,code=sm_30 
+    # -gencode arch=compute_35,code=sm_35
     -gencode arch=compute_50,code=[sm_50,compute_50]
     -gencode arch=compute_52,code=[sm_52,compute_52]
     -gencode arch=compute_61,code=sm_61
@@ -151,7 +152,7 @@ if (CUDA_FOUND)
   )
 
   target_link_libraries(${PROJECT_NAME}_lib
-    cuda
+    # cuda    # Not needed by cuda 11.7 (and possibly others)
     cudart
     cublas
     curand

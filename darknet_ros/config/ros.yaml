@@ -1,16 +1,14 @@
 subscribers:
-
   camera_reading:
-    topic: /camera/rgb/image_raw
+    # topic: /camera/rgb/image_color  # Use to listen to images from bag.
+    topic: /camera/rgb/image_raw  # Does not listen to bag but waits for action being called.
     queue_size: 1
 
 actions:
-
   camera_reading:
     name: /darknet_ros/check_for_objects
 
 publishers:
-
   object_detector:
     topic: /darknet_ros/found_object
     queue_size: 1
@@ -27,7 +25,6 @@ publishers:
     latch: true
 
 image_view:
-
   enable_opencv: true
   wait_key_delay: 1
   enable_console_output: true
