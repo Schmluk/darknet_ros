@@ -1,7 +1,7 @@
 subscribers:
   camera_reading:
     # topic: /camera/rgb/image_color  # Use to listen to images from bag.
-    topic: /camera/rgb/image_raw  # Does not listen to bag but waits for action being called.
+    topic: /camera/rgb/image_color  # Does not listen to bag but waits for action being called.
     queue_size: 1
 
 actions:
