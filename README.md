@@ -71,10 +71,6 @@ In order to install darknet_ros, clone the latest version using SSH (see [how to
 
 To maximize performance, make sure to build in *Release* mode. You can specify the build type by setting
 
-    catkin_make -DCMAKE_BUILD_TYPE=Release
-
-or using the [Catkin Command Line Tools](http://catkin-tools.readthedocs.io/en/latest/index.html#)
-
     catkin build darknet_ros -DCMAKE_BUILD_TYPE=Release
 
 Darknet on the CPU is fast (approximately 1.5 seconds on an Intel Core i7-6700HQ CPU @ 2.60GHz × 8) but it's like 500 times faster on GPU! You'll have to have an Nvidia GPU and you'll have to install CUDA. The CMakeLists.txt file automatically detects if you have CUDA installed or not. CUDA is a parallel computing platform and application programming interface (API) model created by Nvidia. If you do not have CUDA on your System the build process will switch to the CPU version of YOLO. If you are compiling with CUDA, you might receive the following build error:
